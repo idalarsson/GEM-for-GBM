@@ -1,3 +1,6 @@
+%The RAVEN toolbox was installed according to instructions on
+%https://github.com/SysBioChalmers/RAVEN
+
 %Merge the 139 GBM models 
 merged_model = Cheng_mergeConditionSpecificModels(model_1, model_2);   
 for i = 3:139     
