@@ -47,26 +47,16 @@ library('DESeq2')
 biocLite("biomaRt")
 library(biomaRt)
 
-#fixing a column named Living Days
-N=nrow(merged)
-for (i in 1:N){
-  if (merged[i,12] == 'None'){
-    merged[i,12] = merged[i,4]
-  }
-}
-colnames(merged)[12]<-"LivingDays"
-merged$LivingDays = as.numeric(merged$LivingDays)
-
 #find out cutoff for low and high
-quantile(merged$LivingDays, c(1/3,2/3)) #cutoff should be below 211 and above 454
+quantile(merged$days_to_death, c(1/3,2/3)) #cutoff should be below 231 and above 465
 
 #extract low and high only
-low_and_high = merged[merged$LivingDays<211 | merged$LivingDays>454,]
+low_and_high = merged[merged$LivingDays<231 | merged$LivingDays>465,]
 #replace with 1 (high surival) and 0 (low survival)
 
 M=nrow(low_and_high)
 for (i in 1:M){
-  if (low_and_high[i,12] > 454){
+  if (low_and_high[i,12] > 465){
     low_and_high[i,12] = 1
   }
   else{
