@@ -4,4 +4,4 @@ This repo contains all scripts for reproducing the results presented in the pape
 
 We also provide the RNAseq data set used in the manuscript to define the differentially expressed genes between high and low survival patients. 
 
-https://zenodo.org/badge/241441702.svg
+[![DOI](https://zenodo.org/badge/241441702.svg)](https://zenodo.org/badge/latestdoi/241441702)
